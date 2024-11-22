@@ -7,29 +7,6 @@ const pool = require("./db");
 app.use(cors());
 app.use(express.json());
 
-// //------------- remove this if not working
-
-// // Create the todos table if it doesn't exist
-// const createTable = async () => {
-//     const createTableQuery = `
-//         CREATE TABLE IF NOT EXISTS todo (
-//             id SERIAL PRIMARY KEY,
-//             description TEXT NOT NULL
-//         )
-//     `;
-//     try {
-//         await pool.query(createTableQuery);
-//         console.log("Todos table checked/created successfully.");
-//     } catch (err) {
-//         console.error("Error creating todos table:", err.message);
-//     }
-// };
-
-// // Call the createTable function
-// createTable();
-
-// //-------------------
-
 //ROUTES
 
 //Create a todo
