@@ -4,6 +4,7 @@ services:
     build:
       context: ./client
       dockerfile: Dockerfile
+    container_name: todo-list-frontend
     ports:
       - "3000:80"
   todo-list-api:
@@ -12,6 +13,7 @@ services:
       dockerfile: Dockerfile
     # ports:
     #   - "8001:8001"
+    container_name: todo-list-api
     environment:
       - DB_USER=${DB_USER}
       - DB_PASSWORD=${DB_PASSWORD}
@@ -22,6 +24,7 @@ services:
       - todo-list-postgres
   todo-list-postgres:
     image: postgres:17.1
+    container_name: todo-list-postgres
     environment: 
       - POSTGRES_USER=${DB_USER}
       - POSTGRES_PASSWORD=${DB_PASSWORD}
@@ -30,5 +33,16 @@ services:
     #   - "5432:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
+  todo-list-pgadmin:
+    image: elestio/pgadmin
+    container_name: todo-list-pgadmin
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=${ADMIN_EMAIL}
+      - PGADMIN_DEFAULT_PASSWORD=${ADMIN_PASSWORD}
+    ports:
+      - "8085:80"
 volumes:
   postgres_data:
+networks:
+  default:
+    name: todo-list-network
