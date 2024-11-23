@@ -31,7 +31,7 @@ test:
     - pip install pytest selenium
     - docker compose up -d
     - sleep 15
-    - python test_add_delete_todo.py
+    - python test_test_add_chrome.py
   artifacts:
     paths:
       - docker-compose.yml
