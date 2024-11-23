@@ -9,16 +9,19 @@ what to do?
 5. gitlab pipline, docker build only without test
 
 how to use?
+
 - modify `.env` if needed
 - main page http://localhost:3000/
 - pgadmin http://localhost:8008/
 - server 8001
 
 check database with query
-- SELECT * FROM todo;
+
+- `SELECT * FROM todo;`
 
 after run docker compose;
-database postgres container and postgres_data volume and database for todos will be created
-pgadmin container to view postgres will be created
-client container will be created
-server container will be created and server will create table inside todos database in postgres
+
+1. database postgres container and postgres_data volume and database for todos will be created
+2. pgadmin container to view postgres will be created
+3. client container will be created
+4. server container will be created and server will create table inside todos database in postgres
