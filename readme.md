@@ -16,3 +16,9 @@ how to use?
 
 check database with query
 - SELECT * FROM todo;
+
+after run docker compose;
+database postgres container and postgres_data volume and database for todos will be created
+pgadmin container to view postgres will be created
+client container will be created
+server container will be created and server will create table inside todos database in postgres
