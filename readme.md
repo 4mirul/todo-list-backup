@@ -8,14 +8,11 @@ what to do?
 4. use docker compose with database and database gui
 5. gitlab pipline, docker build only without test
 
-server need below
+how to use?
+- modify `.env` if needed
+- main page http://localhost:3000/
+- pgadmin http://localhost:8008/
+- server 8001
 
-DB_USER=
-DB_HOST=
-DB_PORT=
-DB_NAME=
-
-database need below
-
-ADMIN_EMAIL=
-ADMIN_PASSWORD=
+check database with query
+- SELECT * FROM todo;
